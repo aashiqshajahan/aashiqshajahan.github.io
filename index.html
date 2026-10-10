@@ -1,0 +1,264 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08111f">
+  <meta name="description" content="MuziriSpace is building a world of possibilities. A new venture from Trivandrum, Kerala. Coming soon.">
+  <title>MuziriSpace — A World of Possibilities</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #08111f;
+      --green: #6ee7b7;
+      --text: #f4f7fb;
+      --muted: #9ba9bd;
+    }
+
+    body {
+      min-height: 100vh;
+      color: var(--text);
+      background:
+        radial-gradient(ellipse at 80% 25%, #123c3b 0%, transparent 38%),
+        radial-gradient(ellipse at 10% 85%, #142544 0%, transparent 38%),
+        var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+                   BlinkMacSystemFont, "Segoe UI", sans-serif;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .12;
+      background-image: linear-gradient(#9ba9bd22 1px, transparent 1px),
+                        linear-gradient(90deg, #9ba9bd22 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: linear-gradient(to bottom, black, transparent 85%);
+    }
+
+    .page {
+      position: relative;
+      max-width: 1180px;
+      min-height: 100vh;
+      margin: auto;
+      padding: 36px 7%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header, footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 20px;
+      font-weight: 750;
+      letter-spacing: -.7px;
+    }
+
+    .logo {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border: 1px solid #6ee7b755;
+      border-radius: 12px;
+      color: var(--green);
+      background: #6ee7b710;
+      font-size: 23px;
+    }
+
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 14px var(--green);
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 100px 0 110px;
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      padding: 9px 14px;
+      border: 1px solid #6ee7b733;
+      border-radius: 30px;
+      color: var(--green);
+      background: #6ee7b70b;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin-top: 32px;
+      font-size: clamp(48px, 8vw, 94px);
+      line-height: 1.04;
+      letter-spacing: -5px;
+      font-weight: 750;
+    }
+
+    h1 span {
+      color: var(--green);
+    }
+
+    .intro {
+      max-width: 590px;
+      margin-top: 26px;
+      color: var(--muted);
+      font-size: clamp(16px, 2vw, 19px);
+      line-height: 1.85;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 38px;
+    }
+
+    .primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 15px 22px;
+      border-radius: 9px;
+      background: var(--green);
+      color: #081a18;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      transition: transform .2s, background .2s;
+    }
+
+    .primary:hover {
+      transform: translateY(-2px);
+      background: #a7f3d0;
+    }
+
+    .location {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .location strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, #ffffff22, transparent);
+      margin-bottom: 25px;
+    }
+
+    footer {
+      padding-top: 22px;
+      border-top: 1px solid #ffffff16;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    footer strong {
+      color: #dce7f4;
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 25px 23px; }
+      .brand { font-size: 17px; }
+      .logo { width: 34px; height: 34px; }
+      .status { font-size: 9px; letter-spacing: .8px; }
+      main { padding: 95px 0; }
+      h1 { letter-spacing: -2.5px; }
+      .intro { line-height: 1.75; }
+      footer { align-items: flex-start; flex-direction: column; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">
+        <div class="logo">M</div>
+        <span>MuziriSpace<span style="color:#6ee7b7">.</span></span>
+      </div>
+      <div class="status">
+        <span class="dot"></span>
+        Something is taking shape
+      </div>
+    </header>
+
+    <main>
+      <div class="eyebrow">
+        <span>✳</span>
+        An idea taking flight
+      </div>
+
+      <h1>A world of<br><span>possibilities.</span></h1>
+
+      <p class="intro">
+        Rooted in the spirit of discovery. Inspired by what's next.
+        We're building something new from Trivandrum, Kerala —
+        bringing ideas, opportunities, and possibilities together
+        under one space.
+      </p>
+
+      <div class="actions">
+        <a class="primary" href="https://www.linkedin.com/"
+           target="_blank" rel="noopener noreferrer">
+          Follow our journey <span>↗</span>
+        </a>
+        <div class="location">
+          <strong>Coming soon to Trivandrum</strong>
+          Kerala, India · Built for what's next
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <span>© <span id="year">2026</span> <strong>MuziriSpace</strong></span>
+      <span>Rooted in heritage. Designed for the future.</span>
+    </footer>
+  </div>
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
